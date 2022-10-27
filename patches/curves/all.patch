@@ -1,0 +1,331 @@
+diff --git a/bls12_377/Cargo.toml b/bls12_377/Cargo.toml
+index 713c2af..f1e5a78 100644
+--- a/bls12_377/Cargo.toml
++++ b/bls12_377/Cargo.toml
+@@ -16,4 +16,4 @@ edition = "2018"
+-ark-ff = { version="^0.3.0", default-features = false }
+-ark-ec = { version="^0.3.0", default-features = false }
+-ark-r1cs-std = { version="^0.3.0", default-features = false, optional = true }
+-ark-std = { version="^0.3.0", default-features = false }
++ark-ff = { path="../algebra/ff", default-features = false }
++ark-ec = { path = "../algebra/ec", default-features = false }
++ark-r1cs-std = { path = "../../ark-r1cs-std", default-features = false, optional = true }
++ark-std = { path = "../../std", default-features = false }
+@@ -22,2 +22,2 @@ ark-std = { version="^0.3.0", default-features = false }
+-ark-relations = { version="^0.3.0", default-features = false }
+-ark-serialize = { version="^0.3.0", default-features = false }
++ark-relations = { path = "../snark/relations", default-features = false }
++ark-serialize = { path = "../algebra/serialize", default-features = false }
+diff --git a/bls12_381/Cargo.toml b/bls12_381/Cargo.toml
+index baf2c8b..bf35202 100644
+--- a/bls12_381/Cargo.toml
++++ b/bls12_381/Cargo.toml
+@@ -16,3 +16,3 @@ edition = "2018"
+-ark-ff = { version="^0.3.0", default-features = false }
+-ark-ec = { version="^0.3.0", default-features = false }
+-ark-std = { version="^0.3.0", default-features = false }
++ark-ff = { path="../algebra/ff", default-features = false }
++ark-ec = { path = "../algebra/ec", default-features = false }
++ark-std = { path = "../../std", default-features = false }
+@@ -21 +21 @@ ark-std = { version="^0.3.0", default-features = false }
+-ark-serialize = { version="^0.3.0", default-features = false }
++ark-serialize = { path = "../algebra/serialize", default-features = false }
+diff --git a/bn254/Cargo.toml b/bn254/Cargo.toml
+index 4a52b0b..8adca22 100644
+--- a/bn254/Cargo.toml
++++ b/bn254/Cargo.toml
+@@ -16,3 +16,3 @@ edition = "2018"
+-ark-ff = { version="^0.3.0", default-features = false }
+-ark-ec = { version="^0.3.0", default-features = false }
+-ark-std = { version="^0.3.0", default-features = false }
++ark-ff = { path = "../../algebra/ff", default-features = false }
++ark-ec = { path = "../../algebra/ec", default-features = false }
++ark-std = { path = "../../std", default-features = false }
+@@ -21 +21 @@ ark-std = { version="^0.3.0", default-features = false }
+-ark-serialize = { version="^0.3.0", default-features = false }
++ark-serialize = { path = "../algebra/serialize", default-features = false }
+diff --git a/bw6_761/Cargo.toml b/bw6_761/Cargo.toml
+index 442768b..583e97d 100644
+--- a/bw6_761/Cargo.toml
++++ b/bw6_761/Cargo.toml
+@@ -16,3 +16,3 @@ edition = "2018"
+-ark-ff = { version="^0.3.0", default-features = false }
+-ark-ec = { version="^0.3.0", default-features = false }
+-ark-std = { version="^0.3.0", default-features = false }
++ark-ff = { path="../algebra/ff", default-features = false }
++ark-ec = { path = "../algebra/ec", default-features = false }
++ark-std = { path = "../../std", default-features = false }
+@@ -22 +22 @@ ark-bls12-377 = { version="^0.3.0", path = "../bls12_377", default-features = fa
+-ark-serialize = { version="^0.3.0", default-features = false }
++ark-serialize = { path = "../algebra/serialize", default-features = false }
+diff --git a/cp6_782/Cargo.toml b/cp6_782/Cargo.toml
+index 9f86e74..0a2fe5a 100644
+--- a/cp6_782/Cargo.toml
++++ b/cp6_782/Cargo.toml
+@@ -16,3 +16,3 @@ edition = "2018"
+-ark-ff = { version = "^0.3.0", default-features = false }
+-ark-ec = { version = "^0.3.0", default-features = false }
+-ark-std = { version = "^0.3.0", default-features = false }
++ark-ff = { path = "../algebra/ff", default-features = false }
++ark-ec = { path = "../algebra/ec", default-features = false }
++ark-std = { path = "../../std", default-features = false }
+@@ -22 +22 @@ ark-bls12-377 = { version = "^0.3.0", path = "../bls12_377", default-features =
+-ark-serialize = { version = "^0.3.0", default-features = false }
++ark-serialize = { path = "../algebra/serialize", default-features = false }
+diff --git a/curve-benches/Cargo.toml b/curve-benches/Cargo.toml
+index b16dfc0..6bb4192 100644
+--- a/curve-benches/Cargo.toml
++++ b/curve-benches/Cargo.toml
+@@ -31,4 +31,4 @@ bencher = { version = "0.1.5" }
+-ark-std = { version = "^0.3.0", default-features = false }
+-ark-ec = { version = "^0.3.0", default-features = false }
+-ark-ff = { version = "^0.3.0", default-features = false }
+-ark-serialize = { version = "^0.3.0", default-features = false }
++ark-std = { path = "../../std", default-features = false }
++ark-ec = { path = "../algebra/ec", default-features = false }
++ark-ff = { path = "../algebra/ff", default-features = false }
++ark-serialize = { path = "../algebra/serialize", default-features = false }
+diff --git a/curve-constraint-tests/Cargo.toml b/curve-constraint-tests/Cargo.toml
+index 801fd52..0bc6880 100644
+--- a/curve-constraint-tests/Cargo.toml
++++ b/curve-constraint-tests/Cargo.toml
+@@ -16,6 +16,6 @@ edition = "2018"
+-ark-std = { version = "^0.3.0", default-features = false }
+-ark-serialize = { version = "^0.3.0", default-features = false }
+-ark-ff = { version = "^0.3.0", default-features = false }
+-ark-relations = { version = "^0.3.0", default-features = false }
+-ark-r1cs-std = { version = "^0.3.0", default-features = false }
+-ark-ec = { version = "^0.3.0", default-features = false }
++ark-std = { path = "../../std", default-features = false }
++ark-serialize = { path = "../algebra/serialize", default-features = false }
++ark-ff = { path = "../algebra/ff", default-features = false }
++ark-relations = { path = "../snark/relations", default-features = false }
++ark-r1cs-std = { path = "../../ark-r1cs-std", default-features = false }
++ark-ec = { path = "../algebra/ec", default-features = false }
+diff --git a/ed_on_bls12_377/Cargo.toml b/ed_on_bls12_377/Cargo.toml
+index 62e8e5e..910706a 100644
+--- a/ed_on_bls12_377/Cargo.toml
++++ b/ed_on_bls12_377/Cargo.toml
+@@ -16,4 +16,4 @@ edition = "2018"
+-ark-ff = { version = "^0.3.0", default-features = false }
+-ark-ec = { version = "^0.3.0", default-features = false }
+-ark-std = { version = "^0.3.0", default-features = false }
+-ark-r1cs-std = { version = "^0.3.0", default-features = false, optional = true }
++ark-ff = { path = "../algebra/ff", default-features = false }
++ark-ec = { path = "../algebra/ec", default-features = false }
++ark-std = { path = "../../std", default-features = false }
++ark-r1cs-std = { path = "../../ark-r1cs-std", default-features = false, optional = true }
+@@ -23,2 +23,2 @@ ark-bls12-377 = { version = "^0.3.0", path = "../bls12_377", default-features =
+-ark-relations = { version = "^0.3.0", default-features = false }
+-ark-serialize = { version = "^0.3.0", default-features = false }
++ark-relations = { path = "../snark/relations", default-features = false }
++ark-serialize = { path = "../algebra/serialize", default-features = false }
+diff --git a/ed_on_bls12_381/Cargo.toml b/ed_on_bls12_381/Cargo.toml
+index c584cc1..b5a1491 100644
+--- a/ed_on_bls12_381/Cargo.toml
++++ b/ed_on_bls12_381/Cargo.toml
+@@ -16,4 +16,4 @@ edition = "2018"
+-ark-ff = { version = "^0.3.0", default-features = false }
+-ark-ec = { version = "^0.3.0", default-features = false }
+-ark-std = { version = "^0.3.0", default-features = false }
+-ark-r1cs-std = { version = "^0.3.0", default-features = false, optional = true }
++ark-ff = { path = "../algebra/ff", default-features = false }
++ark-ec = { path = "../algebra/ec", default-features = false }
++ark-std = { path = "../../std", default-features = false }
++ark-r1cs-std = { path = "../../ark-r1cs-std", default-features = false, optional = true }
+@@ -23,2 +23,2 @@ ark-bls12-381 = { version = "^0.3.0", path = "../bls12_381", default-features =
+-ark-relations = { version = "^0.3.0", default-features = false }
+-ark-serialize = { version = "^0.3.0", default-features = false }
++ark-relations = { path = "../snark/relations", default-features = false }
++ark-serialize = { path = "../algebra/serialize", default-features = false }
+diff --git a/ed_on_bn254/Cargo.toml b/ed_on_bn254/Cargo.toml
+index 3cd7a72..4152c05 100644
+--- a/ed_on_bn254/Cargo.toml
++++ b/ed_on_bn254/Cargo.toml
+@@ -16,4 +16,4 @@ edition = "2018"
+-ark-ff = { version = "^0.3.0", default-features = false }
+-ark-ec = { version = "^0.3.0", default-features = false }
+-ark-std = { version = "^0.3.0", default-features = false }
+-ark-r1cs-std = { version = "^0.3.0", default-features = false, optional = true }
++ark-ff = { path = "../algebra/ff", default-features = false }
++ark-ec = { path = "../algebra/ec", default-features = false }
++ark-std = { path = "../../std", default-features = false }
++ark-r1cs-std = { path = "../../ark-r1cs-std", default-features = false, optional = true }
+@@ -23,2 +23,2 @@ ark-bn254 = { version = "^0.3.0", path = "../bn254", default-features = false, f
+-ark-relations = { version = "^0.3.0", default-features = false }
+-ark-serialize = { version = "^0.3.0", default-features = false }
++ark-relations = { path = "../snark/relations", default-features = false }
++ark-serialize = { path = "../algebra/serialize", default-features = false }
+diff --git a/ed_on_bw6_761/Cargo.toml b/ed_on_bw6_761/Cargo.toml
+index b641a12..bfb7cce 100644
+--- a/ed_on_bw6_761/Cargo.toml
++++ b/ed_on_bw6_761/Cargo.toml
+@@ -19,4 +19,4 @@ ark-ed-on-cp6-782 = { version = "^0.3.0", path = "../ed_on_cp6_782", default-fea
+-ark-relations = { version = "^0.3.0", default-features = false }
+-ark-r1cs-std = { version = "^0.3.0", default-features = false }
+-ark-ff = { version = "^0.3.0", default-features = false }
+-ark-std = { version = "^0.3.0", default-features = false }
++ark-relations = { path = "../snark/relations", default-features = false }
++ark-r1cs-std = { path = "../../ark-r1cs-std", default-features = false }
++ark-ff = { path = "../algebra/ff", default-features = false }
++ark-std = { path = "../../std", default-features = false }
+diff --git a/ed_on_cp6_782/Cargo.toml b/ed_on_cp6_782/Cargo.toml
+index 75a129c..3b3b608 100644
+--- a/ed_on_cp6_782/Cargo.toml
++++ b/ed_on_cp6_782/Cargo.toml
+@@ -16,4 +16,4 @@ edition = "2018"
+-ark-ff = { version = "^0.3.0", default-features = false }
+-ark-ec = { version = "^0.3.0", default-features = false }
+-ark-std = { version = "^0.3.0", default-features = false }
+-ark-r1cs-std = { version = "^0.3.0", default-features = false, optional = true }
++ark-ff = { path = "../algebra/ff", default-features = false }
++ark-ec = { path = "../algebra/ec", default-features = false }
++ark-std = { path = "../../std", default-features = false }
++ark-r1cs-std = { path = "../../ark-r1cs-std", default-features = false, optional = true }
+@@ -23,2 +23,2 @@ ark-bls12-377 = { version = "^0.3.0", path = "../bls12_377", default-features =
+-ark-relations = { version = "^0.3.0", default-features = false }
+-ark-serialize = { version = "^0.3.0", default-features = false }
++ark-relations = { path = "../snark/relations", default-features = false }
++ark-serialize = { path = "../algebra/serialize", default-features = false }
+diff --git a/ed_on_mnt4_298/Cargo.toml b/ed_on_mnt4_298/Cargo.toml
+index b923bbb..e466b10 100644
+--- a/ed_on_mnt4_298/Cargo.toml
++++ b/ed_on_mnt4_298/Cargo.toml
+@@ -16,4 +16,4 @@ edition = "2018"
+-ark-ff = { version = "^0.3.0", default-features = false }
+-ark-ec = { version = "^0.3.0", default-features = false }
+-ark-std = { version = "^0.3.0", default-features = false }
+-ark-r1cs-std = { version = "^0.3.0", default-features = false, optional = true }
++ark-ff = { path = "../algebra/ff", default-features = false }
++ark-ec = { path = "../algebra/ec", default-features = false }
++ark-std = { path = "../../std", default-features = false }
++ark-r1cs-std = { path = "../../ark-r1cs-std", default-features = false, optional = true }
+@@ -23,2 +23,2 @@ ark-mnt4-298 = { version = "^0.3.0", path = "../mnt4_298", default-features = fa
+-ark-relations = { version = "^0.3.0", default-features = false }
+-ark-serialize = { version = "^0.3.0", default-features = false }
++ark-relations = { path = "../snark/relations", default-features = false }
++ark-serialize = { path = "../algebra/serialize", default-features = false }
+diff --git a/ed_on_mnt4_753/Cargo.toml b/ed_on_mnt4_753/Cargo.toml
+index 25b063c..df6a85e 100644
+--- a/ed_on_mnt4_753/Cargo.toml
++++ b/ed_on_mnt4_753/Cargo.toml
+@@ -16,4 +16,4 @@ edition = "2018"
+-ark-ff = { version = "^0.3.0", default-features = false }
+-ark-ec = { version = "^0.3.0", default-features = false }
+-ark-std = { version = "^0.3.0", default-features = false }
+-ark-r1cs-std = { version = "^0.3.0", default-features = false, optional = true }
++ark-ff = { path = "../algebra/ff", default-features = false }
++ark-ec = { path = "../algebra/ec", default-features = false }
++ark-std = { path = "../../std", default-features = false }
++ark-r1cs-std = { path = "../../ark-r1cs-std", default-features = false, optional = true }
+@@ -23,2 +23,2 @@ ark-mnt4-753 = { version = "^0.3.0", path = "../mnt4_753", default-features = fa
+-ark-relations = { version = "^0.3.0", default-features = false }
+-ark-serialize = { version = "^0.3.0", default-features = false }
++ark-relations = { path = "../snark/relations", default-features = false }
++ark-serialize = { path = "../algebra/serialize", default-features = false }
+diff --git a/mnt4_298/Cargo.toml b/mnt4_298/Cargo.toml
+index e016986..a29b737 100644
+--- a/mnt4_298/Cargo.toml
++++ b/mnt4_298/Cargo.toml
+@@ -16,4 +16,4 @@ edition = "2018"
+-ark-ff = { version = "^0.3.0", default-features = false }
+-ark-ec = { version = "^0.3.0", default-features = false }
+-ark-std = { version = "^0.3.0", default-features = false }
+-ark-r1cs-std = { version = "^0.3.0", default-features = false, optional = true }
++ark-ff = { path = "../algebra/ff", default-features = false }
++ark-ec = { path = "../algebra/ec", default-features = false }
++ark-std = { path = "../../std", default-features = false }
++ark-r1cs-std = { path = "../../ark-r1cs-std", default-features = false, optional = true }
+@@ -22,2 +22,2 @@ ark-r1cs-std = { version = "^0.3.0", default-features = false, optional = true }
+-ark-relations = { version = "^0.3.0", default-features = false }
+-ark-serialize = { version = "^0.3.0", default-features = false }
++ark-relations = { path = "../snark/relations", default-features = false }
++ark-serialize = { path = "../algebra/serialize", default-features = false }
+diff --git a/mnt4_753/Cargo.toml b/mnt4_753/Cargo.toml
+index 727c0f9..ef979f4 100644
+--- a/mnt4_753/Cargo.toml
++++ b/mnt4_753/Cargo.toml
+@@ -16,4 +16,4 @@ edition = "2018"
+-ark-ff = { version = "^0.3.0", default-features = false }
+-ark-ec = { version = "^0.3.0", default-features = false }
+-ark-std = { version = "^0.3.0", default-features = false }
+-ark-r1cs-std = { version = "^0.3.0", default-features = false, optional = true }
++ark-ff = { path = "../algebra/ff", default-features = false }
++ark-ec = { path = "../algebra/ec", default-features = false }
++ark-std = { path = "../../std", default-features = false }
++ark-r1cs-std = { path = "../../ark-r1cs-std", default-features = false, optional = true }
+@@ -22,2 +22,2 @@ ark-r1cs-std = { version = "^0.3.0", default-features = false, optional = true }
+-ark-relations = { version = "^0.3.0", default-features = false }
+-ark-serialize = { version = "^0.3.0", default-features = false }
++ark-relations = { path = "../snark/relations", default-features = false }
++ark-serialize = { path = "../algebra/serialize", default-features = false }
+diff --git a/mnt6_298/Cargo.toml b/mnt6_298/Cargo.toml
+index 68e5ec9..5053657 100644
+--- a/mnt6_298/Cargo.toml
++++ b/mnt6_298/Cargo.toml
+@@ -16,4 +16,4 @@ edition = "2018"
+-ark-ff = { version = "^0.3.0", default-features = false }
+-ark-ec = { version = "^0.3.0", default-features = false }
+-ark-std = { version = "^0.3.0", default-features = false }
+-ark-r1cs-std = { version = "^0.3.0", default-features = false, optional = true }
++ark-ff = { path = "../algebra/ff", default-features = false }
++ark-ec = { path = "../algebra/ec", default-features = false }
++ark-std = { path = "../../std", default-features = false }
++ark-r1cs-std = { path = "../../ark-r1cs-std", default-features = false, optional = true }
+@@ -23,2 +23,2 @@ ark-mnt4-298 = { version = "^0.3.0", path = "../mnt4_298", default-features = fa
+-ark-relations = { version = "^0.3.0", default-features = false }
+-ark-serialize = { version = "^0.3.0", default-features = false }
++ark-relations = { path = "../snark/relations", default-features = false }
++ark-serialize = { path = "../algebra/serialize", default-features = false }
+diff --git a/mnt6_753/Cargo.toml b/mnt6_753/Cargo.toml
+index 43a46bd..1431070 100644
+--- a/mnt6_753/Cargo.toml
++++ b/mnt6_753/Cargo.toml
+@@ -16,3 +16,3 @@ edition = "2018"
+-ark-ff = { version = "^0.3.0", default-features = false }
+-ark-ec = { version = "^0.3.0", default-features = false }
+-ark-std = { version = "^0.3.0", default-features = false }
++ark-ff = { path = "../algebra/ff", default-features = false }
++ark-ec = { path = "../algebra/ec", default-features = false }
++ark-std = { path = "../../std", default-features = false }
+@@ -23,2 +23,2 @@ ark-mnt4-753 = { version = "^0.3.0", path = "../mnt4_753", default-features = fa
+-ark-relations = { version = "^0.3.0", default-features = false }
+-ark-serialize = { version = "^0.3.0", default-features = false }
++ark-relations = { path = "../snark/relations", default-features = false }
++ark-serialize = { path = "../algebra/serialize", default-features = false }
+diff --git a/pallas/Cargo.toml b/pallas/Cargo.toml
+index d581ef4..b9c373e 100644
+--- a/pallas/Cargo.toml
++++ b/pallas/Cargo.toml
+@@ -16,4 +16,4 @@ edition = "2018"
+-ark-ff = { version = "^0.3.0", default-features = false }
+-ark-ec = { version = "^0.3.0", default-features = false }
+-ark-r1cs-std = { version = "^0.3.0", default-features = false, optional = true }
+-ark-std = { version = "^0.3.0", default-features = false }
++ark-ff = { path = "../algebra/ff", default-features = false }
++ark-ec = { path = "../algebra/ec", default-features = false }
++ark-r1cs-std = { path = "../../ark-r1cs-std", default-features = false, optional = true }
++ark-std = { path = "../../std", default-features = false }
+@@ -22,2 +22,2 @@ ark-std = { version = "^0.3.0", default-features = false }
+-ark-relations = { version = "^0.3.0", default-features = false }
+-ark-serialize = { version = "^0.3.0", default-features = false }
++ark-relations = { path = "../snark/relations", default-features = false }
++ark-serialize = { path = "../algebra/serialize", default-features = false }
+diff --git a/vesta/Cargo.toml b/vesta/Cargo.toml
+index a255948..89321fb 100644
+--- a/vesta/Cargo.toml
++++ b/vesta/Cargo.toml
+@@ -16,4 +16,4 @@ edition = "2018"
+-ark-ff = { version = "^0.3.0", default-features = false }
+-ark-ec = { version = "^0.3.0", default-features = false }
+-ark-r1cs-std = { version = "^0.3.0", default-features = false, optional = true }
+-ark-std = { version = "^0.3.0", default-features = false }
++ark-ff = { path = "../algebra/ff", default-features = false }
++ark-ec = { path = "../algebra/ec", default-features = false }
++ark-r1cs-std = { path = "../../ark-r1cs-std", default-features = false, optional = true }
++ark-std = { path = "../../std", default-features = false }
+@@ -23,2 +23,2 @@ ark-pallas = { version = "^0.3.0", path = "../pallas", default-features = false,
+-ark-relations = { version = "^0.3.0", default-features = false }
+-ark-serialize = { version = "^0.3.0", default-features = false }
++ark-relations = { path = "../snark/relations", default-features = false }
++ark-serialize = { path = "../algebra/serialize", default-features = false }

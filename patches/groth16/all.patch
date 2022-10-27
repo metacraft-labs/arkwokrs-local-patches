@@ -1,0 +1,21 @@
+diff --git a/Cargo.toml b/Cargo.toml
+index 4a0e2db..da8a20a 100644
+--- a/Cargo.toml
++++ b/Cargo.toml
+@@ -18,8 +18,8 @@ edition = "2018"
+-ark-ff = { version = "^0.3.0", default-features = false }
+-ark-ec = { version = "^0.3.0", default-features = false }
+-ark-serialize = { version = "^0.3.0", default-features = false, features = [ "derive" ] }
+-ark-poly = { version = "^0.3.0", default-features = false }
+-ark-std = { version = "^0.3.0", default-features = false }
+-ark-relations = { version = "^0.3.0", default-features = false }
+-ark-crypto-primitives = { version = "^0.3.0", default-features = false }
+-ark-r1cs-std = { version = "^0.3.0", default-features = false, optional = true }
++ark-ff = { path = "../algebra/ff", default-features = false }
++ark-ec = { path = "../algebra/ec", default-features = false }
++ark-serialize = { path = "../algebra/serialize", default-features = false, features = [ "derive" ] }
++ark-poly = { path = "../algebra/poly", default-features = false }
++ark-std = { path = "../std", default-features = false }
++ark-relations = { path = "../snark/relations", default-features = false }
++ark-crypto-primitives = { path = "../crypto-primitives", default-features = false }
++ark-r1cs-std = { path = "../ark-r1cs-std", default-features = false, optional = true }

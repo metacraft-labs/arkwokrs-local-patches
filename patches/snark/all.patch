@@ -1,0 +1,20 @@
+diff --git a/relations/Cargo.toml b/relations/Cargo.toml
+index e7b8964..4416cb6 100644
+--- a/relations/Cargo.toml
++++ b/relations/Cargo.toml
+@@ -16,2 +16,2 @@ edition = "2018"
+-ark-ff = { version = "^0.3.0", default-features = false }
+-ark-std = { version = "^0.3.0", default-features = false }
++ark-ff = { path = "../../algebra/ff", default-features = false }
++ark-std = { path = "../../std", default-features = false }
+diff --git a/snark/Cargo.toml b/snark/Cargo.toml
+index 6d89e46..b5e926e 100644
+--- a/snark/Cargo.toml
++++ b/snark/Cargo.toml
+@@ -16,3 +16,3 @@ edition = "2018"
+-ark-ff = { version = "^0.3.0", default-features = false }
+-ark-std = { version = "^0.3.0", default-features = false }
+-ark-relations = { version = "^0.3.0", path = "../relations", default-features = false }
++ark-ff = { path = "../../algebra/ff", default-features = false }
++ark-std = { path = "../../std", default-features = false }
++ark-relations = { path = "../relations", default-features = false }

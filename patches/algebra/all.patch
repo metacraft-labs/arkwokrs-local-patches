@@ -1,0 +1,76 @@
+diff --git a/ec/Cargo.toml b/ec/Cargo.toml
+index 866a635..215065a 100644
+--- a/ec/Cargo.toml
++++ b/ec/Cargo.toml
+@@ -16,3 +16,3 @@ edition = "2018"
+-ark-std = { version = "^0.3.0", default-features = false }
+-ark-serialize = { version = "^0.3.0", path = "../serialize", default-features = false }
+-ark-ff = { version = "^0.3.0", path = "../ff", default-features = false }
++ark-std = { path = "../../std", default-features = false }
++ark-serialize = { path = "../serialize", default-features = false }
++ark-ff = { path = "../ff", default-features = false }
+diff --git a/ff/Cargo.toml b/ff/Cargo.toml
+index fc293a8..ee4a06d 100644
+--- a/ff/Cargo.toml
++++ b/ff/Cargo.toml
+@@ -19,2 +19,2 @@ ark-ff-macros = { version = "^0.3.0", path = "../ff-macros" }
+-ark-std = { version = "^0.3.0", default-features = false }
+-ark-serialize = { version = "^0.3.0", path = "../serialize", default-features = false }
++ark-std = { path = "../../std", default-features = false }
++ark-serialize = { path = "../serialize", default-features = false }
+diff --git a/poly-benches/Cargo.toml b/poly-benches/Cargo.toml
+index 7883f0f..a6e04b8 100644
+--- a/poly-benches/Cargo.toml
++++ b/poly-benches/Cargo.toml
+@@ -12,3 +12,3 @@ publish = false
+-ark-ff = { version = "^0.3.0", path = "../ff" }
+-ark-poly = { version = "^0.3.0", path = "../poly" }
+-ark-std = { version = "^0.3.0", default-features = false }
++ark-ff = { path = "../algebra/ff", path = "../ff" }
++ark-poly = { path = "../algebra/poly", path = "../poly" }
++ark-std = { path = "../../std", default-features = false }
+diff --git a/poly/Cargo.toml b/poly/Cargo.toml
+index 83b694f..3b51b9a 100644
+--- a/poly/Cargo.toml
++++ b/poly/Cargo.toml
+@@ -16,3 +16,3 @@ edition = "2018"
+-ark-ff = { version = "^0.3.0", path = "../ff", default-features = false }
+-ark-serialize = { version = "^0.3.0", path = "../serialize", default-features = false, features = ["derive"] }
+-ark-std = { version = "^0.3.0", default-features = false }
++ark-ff = { path = "../ff", default-features = false }
++ark-serialize = { path = "../serialize", default-features = false, features = ["derive"] }
++ark-std = { path = "../../std", default-features = false }
+diff --git a/serialize/Cargo.toml b/serialize/Cargo.toml
+index 3c46759..ba8a18a 100644
+--- a/serialize/Cargo.toml
++++ b/serialize/Cargo.toml
+@@ -17 +17 @@ ark-serialize-derive = { version = "^0.3.0", path = "../serialize-derive", optio
+-ark-std = { version = "^0.3.0", default-features = false }
++ark-std = { path = "../../std", default-features = false }
+diff --git a/test-curves/Cargo.toml b/test-curves/Cargo.toml
+index 1222ef9..ef206da 100644
+--- a/test-curves/Cargo.toml
++++ b/test-curves/Cargo.toml
+@@ -16,3 +16,3 @@ edition = "2018"
+-ark-std = { version = "^0.3.0", default-features = false }
+-ark-ff = { version = "^0.3.0", path = "../ff", default-features = false }
+-ark-ec = { version = "^0.3.0", path = "../ec", default-features = false }
++ark-std = { path = "../../std", default-features = false }
++ark-ff = { path = "../algebra/ff", path = "../ff", default-features = false }
++ark-ec = { path = "../algebra/ec", path = "../ec", default-features = false }
+@@ -21 +21 @@ ark-ec = { version = "^0.3.0", path = "../ec", default-features = false }
+-ark-serialize = { version = "^0.3.0", path = "../serialize", default-features = false }
++ark-serialize = { path = "../algebra/serialize", path = "../serialize", default-features = false }
+diff --git a/test-templates/Cargo.toml b/test-templates/Cargo.toml
+index bdb9140..229479b 100644
+--- a/test-templates/Cargo.toml
++++ b/test-templates/Cargo.toml
+@@ -16,4 +16,4 @@ edition = "2018"
+-ark-std = { version = "^0.3.0", default-features = false }
+-ark-serialize = { version = "^0.3.0", path = "../serialize", default-features = false }
+-ark-ff = { version = "^0.3.0", path = "../ff", default-features = false }
+-ark-ec = { version = "^0.3.0", path = "../ec", default-features = false }
++ark-std = { path = "../../std", default-features = false }
++ark-serialize = { path = "../algebra/serialize", path = "../serialize", default-features = false }
++ark-ff = { path = "../algebra/ff", path = "../ff", default-features = false }
++ark-ec = { path = "../algebra/ec", path = "../ec", default-features = false }
